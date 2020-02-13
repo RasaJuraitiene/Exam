@@ -11,6 +11,6 @@ class UpdateForm extends BaseForm
         parent::__construct($data);
 
         $this->data['attr']['id'] = 'update-form';
-        $this->data['buttons']['submit']['title'] = 'Atnaujinti';
+        $this->data['buttons']['submit']['title'] = 'Update';
     }
 }

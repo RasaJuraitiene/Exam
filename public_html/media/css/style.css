@@ -174,7 +174,7 @@ footer {
     max-width: 800px;
     height: 400px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 20px 0;
 }
@@ -203,8 +203,8 @@ footer {
     height: 90%;
     border: grey 1px solid;
     color: darkslategrey;
-    margin: 20px;
-    max-width: 25%;
+    /*margin: 20px;*/
+    width: 25%;
 }
 
 .card-img {

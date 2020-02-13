@@ -54,7 +54,6 @@ $footer = new \App\Views\Footer();
         <section class="wrapper">
             <?php if (App::$session->userLoggedIn()): ?>
                 <div class="block">
-                    <h1>Reviews:</h1>
                     <?php print $createForm->render(); ?>
                 </div>
             <?php else: ?>
@@ -64,13 +63,13 @@ $footer = new \App\Views\Footer();
             <?php endif; ?>
             <div id="card-container"></div>
         </section>
-    <!-- Update Modal -->
-    <div id="update-modal" class="modal">
-        <div class="wrapper">
-            <span class="close">&times;</span>
-            <?php print $updateForm->render(); ?>
+        <!-- Update Modal -->
+        <div id="update-modal" class="modal">
+            <div class="wrapper">
+                <span class="close">&times;</span>
+                <?php print $updateForm->render(); ?>
+            </div>
         </div>
-    </div>
 </main>
 <!-- Footer -->
 <footer>
