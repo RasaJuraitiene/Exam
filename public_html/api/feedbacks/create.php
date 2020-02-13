@@ -37,7 +37,7 @@ function form_success($filtered_input, $form)
 
     $user = \App\App::$session->getUser();
 
-    $review->setUserId($user->getId());
+    $review->setId($user->getId());
 
     $review->setReview($filtered_input['review']);
 
@@ -49,14 +49,14 @@ function form_success($filtered_input, $form)
 //    $r_array = $user->getData();
 //    unset($r_array['id']);
 
-    $r_array['full_name'] = $user->getName() . ' ' . $user->getSurname();
+    $r_array['name'] = $user->getName();
 
     $r_array['timestamp'] = since($r_array['timestamp']);
 
     $sorted = [
         'id' => $r_array['id'],
+        'name' => $r_array['name'],
         'review' => $r_array['review'],
-        'full_name' => $r_array['full_name'],
         'timestamp' => $r_array['timestamp']
     ];
 

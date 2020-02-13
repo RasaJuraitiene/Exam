@@ -3,8 +3,6 @@
 const endpoints = {
     get: 'api/feedbacks/get.php',
     create: 'api/feedbacks/create.php',
-    update: 'api/feedbacks/update.php',
-    delete: 'api/feedbacks/delete.php'
 };
 
 /**
@@ -249,20 +247,12 @@ const table = {
 
             Object.keys(data).forEach(data_id => {
                 let td = document.createElement('td');
+                td.className = data_id;
                 td.innerHTML = data[data_id];
-                row.append(td);
-            });
 
-            let buttons = {
-                delete: 'Delete',
-                edit: 'Edit'
-            };
-
-            Object.keys(buttons).forEach(button_id => {
-                let btn = document.createElement('td');
-                btn.innerHTML = buttons[button_id];
-                btn.className = button_id;
-                row.append(btn);
+                if (data_id !== 'id' && data_id !== 'user_id') {
+                    row.append(td);
+                }
             });
 
             return row;
@@ -294,62 +284,8 @@ const table = {
             const row = table.getElement().querySelector('tr[data-id="' + id + '"]');
             row.remove();
         }
-    },
-    buttons: {
-        delete: {
-            init: function () {
-                table.getElement().addEventListener('click', this.onClickListener);
-            },
-            getElements: function () {
-                return document.querySelectorAll('.delete-btn');
-            },
-            onClickListener: function (e) {
-                if (e.target.className === 'delete') {
-                    let formData = new FormData();
-
-                    let tr = e.target.closest('tr');
-
-                    formData.append('id', tr.getAttribute('data-id'));
-                    api(endpoints.delete, formData, table.buttons.delete.success, table.buttons.delete.fail);
-                }
-            },
-            success: function (data) {
-                console.log(data);
-                table.row.delete(data.id);
-            },
-            fail: function (errors) {
-                alert(errors[0]);
-            }
-        },
-        edit: {
-            init: function () {
-                table.getElement().addEventListener('click', this.onClickListener);
-            },
-            getElements: function () {
-                return document.querySelectorAll('.edit-btn');
-            },
-            onClickListener: function (e) {
-                if (e.target.className === 'edit') {
-                    let formData = new FormData();
-
-                    let tr = e.target.closest('tr');
-
-                    formData.append('row_id', tr.getAttribute('data-id'));
-                    api(endpoints.get, formData, table.buttons.edit.success, table.buttons.edit.fail);
-                }
-            },
-            success: function (data) {
-                let person_data = data[0];
-                forms.update.show();
-                forms.update.fill(person_data);
-            },
-            fail: function (errors) {
-                alert(errors[0]);
-            }
-        }
     }
 };
-
 /**
  * Core page functionality
  */

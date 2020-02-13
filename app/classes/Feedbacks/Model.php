@@ -17,16 +17,16 @@ class Model
     }
 
     /**
-     * Irašo $person i duombaze
-     * @param Feedback $person
+     * Irašo $user i duombaze
+     * @param Feedback $user
      * @return bool
      */
-    public function insert(Feedback $person)
+    public function insert(Feedback $user)
     {
-        $row_id = App::$db->insertRow($this->table_name, $person->getData());
-        $person->setId($row_id);
+        $row_id = App::$db->insertRow($this->table_name, $user->getData());
+        $user->setId($row_id);
 
-        return $person;
+        return $user;
     }
 
     /**
@@ -46,22 +46,22 @@ class Model
     }
 
     /**
-     * @param Feedback $person
+     * @param Feedback $user
      * @return bool
      */
-    public function update(Feedback $person)
+    public function update(Feedback $user)
     {
-        return App::$db->updateRow($this->table_name, $person->getId(), $person->getData());
+        return App::$db->updateRow($this->table_name, $user->getId(), $user->getData());
     }
 
     /**
      * deletes all participants from database
-     * @param Feedback $person
+     * @param Feedback $user
      * @return bool
      */
-    public function delete(Feedback $person)
+    public function delete(Feedback $user)
     {
-        return App::$db->deleteRow($this->table_name, $person->getId());
+        return App::$db->deleteRow($this->table_name, $user->getId());
     }
 
     public function __destruct()

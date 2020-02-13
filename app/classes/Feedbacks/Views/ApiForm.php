@@ -10,13 +10,6 @@ class ApiForm extends \Core\Views\Form
     {
         $this->data = [
             'fields' => [
-                'name' => [
-                    'extra' => [
-                        'validators' => [
-                            'validate_not_empty'
-                        ]
-                    ]
-                ],
                 'review' => [
                     'extra' => [
                         'validators' => [
@@ -34,5 +27,4 @@ class ApiForm extends \Core\Views\Form
             ]
         ];
     }
-
 }

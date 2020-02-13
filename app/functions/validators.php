@@ -22,7 +22,6 @@ function validate_login($filtered_input, &$form)
     return true;
 }
 
-
 function validate_mail($field_value, &$field)
 {
     $userModel = new \App\Users\Model();
@@ -42,7 +41,7 @@ function validate_chars_length($field_input, &$field, $params)
 
     if (isset($params['max'])) {
         if ($l > $params['max']) {
-            $field['error'] = "Maximum possible rating exceeded(max: {$params['max']})";
+            $field['error'] = "Maximum possible characters exceeded (max: {$params['max']})";
             return false;
         }
     }

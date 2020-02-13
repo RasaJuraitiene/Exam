@@ -29,7 +29,7 @@ nav .link-wrapper.active {
 /* =============== MAIN =============== */
 
 main {
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     min-height: calc(100vh - 200px);
 }
 
@@ -293,4 +293,18 @@ footer {
     color: darkslategrey;
     margin: 20px;
     max-width: 25%;
+}
+
+.card-img{
+    max-height: 40%;
+    object-fit: cover;
+
+}
+
+.service-name{
+    margin: 10px 5px;
+}
+
+.banner-text{
+    color: whitesmoke;
 }

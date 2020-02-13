@@ -11,12 +11,8 @@ class BaseForm extends \Core\Views\Form
     {
         $this->data = [
             'fields' => [
-                'name' => [
-                    'label' => 'User Name',
-                    'type' => 'text',
-                ],
                 'review' => [
-                    'label' => 'Feedback',
+                    'label' => 'Write a review:',
                     'type' => 'text',
                 ],
             ],
@@ -27,5 +23,4 @@ class BaseForm extends \Core\Views\Form
             ]
         ];
     }
-
 }

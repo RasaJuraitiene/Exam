@@ -29,23 +29,23 @@ $footer = new \App\Views\Footer();
 
 <main>
 
-    <div class="banner"><h1>LUXURY TAXI</h1>
-        <h1> 24/7</h1></div>
+    <div class="banner"><h1 class="banner-text">LUXURY TAXI</h1>
+        <h1 class="banner-text"> 24/7</h1></div>
     <section class="wrapper">
         <div class="container">
             <div class="card">
-                <h5>BUSINESS TAXIS</h5>
+                <h5 class="service-name">BUSINESS TAXIS</h5>
                 <p>Corporate Business Travel with our Luxury Driven Private Taxi Hire.
                     Getting you to your business meeting or corporate event in style, comfort and on time.</P>
             </div>
             <div class="card">
-                <h5>SPECIAL EVENT TAXI</h5>
+                <h5 class="service-name">SPECIAL EVENT TAXI</h5>
                 <p>Private Vehicle Hire for Special Events, Sporting fixture, Concerts,
                     Theatre and West End Show. Choose our private luxury Taxi to make it a extra special event or
                     occasion.</p>
             </div>
             <div class="card">
-                <h5>PRIVATE AIRPORT TAXIS</h5>
+                <h5 class="service-name">PRIVATE AIRPORT TAXIS</h5>
                 <p>Airport Taxi Transfer Service take the hassles out of air travel and hire a private car / taxi
                     transfer service to get you to and from Airports.</p>
             </div>
@@ -64,7 +64,7 @@ $footer = new \App\Views\Footer();
     <?php print $footer->render(); ?>
 </footer>
 
-<script defer src="media/js/app.js"></script>
+<!--<script defer src="media/js/app.js"></script>-->
 </body>
 </html>
 

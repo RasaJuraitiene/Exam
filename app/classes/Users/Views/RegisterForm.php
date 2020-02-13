@@ -48,7 +48,7 @@ class RegisterForm extends \Core\Views\Form
                     ],
                 ],
                 'phone' => [
-                    'label' => 'Phone number(eg.+3706...)',
+                    'label' => 'Phone number',
                     'type' => 'text',
                 ],
                 'password' => [
@@ -69,7 +69,6 @@ class RegisterForm extends \Core\Views\Form
             'validators' => [
                 'validate_fields_match' => [
                     'password',
-                    'password_repeat'
                 ]
             ],
             'callbacks' => [

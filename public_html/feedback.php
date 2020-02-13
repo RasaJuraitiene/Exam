@@ -40,10 +40,6 @@ $footer = new \App\Views\Footer();
                         <th>User Name</th>
                         <th>Review Content</th>
                         <th>Date</th>
-                        <?php if (App::$session->userLoggedIn()): ?>
-                            <th>Delete</th>
-                            <th>Edit</th>
-                        <?php endif; ?>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,8 +51,7 @@ $footer = new \App\Views\Footer();
 
         <?php if (App::$session->userLoggedIn()): ?>
             <div class="block">
-                <h1>Review:</h1>
-                <?php print $createForm->render(); ?>
+                 <?php print $createForm->render(); ?>
             </div>
         <?php else:?>
             <p>
@@ -79,7 +74,6 @@ $footer = new \App\Views\Footer();
 <footer>
     <?php print $footer->render(); ?>
 </footer>
-
 <script defer src="media/js/feedbacks.js"></script>
 </body>
 </html>

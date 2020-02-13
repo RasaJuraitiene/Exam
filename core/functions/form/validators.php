@@ -28,12 +28,3 @@ function validate_not_empty($field_value, &$field)
         return true;
     }
 }
-
-function validate_phone_number($field_value, &$field)
-{
-    if (!preg_match("/^\+3706[0-9]{7}$/", $field_value)) {
-        $field['error'] = 'Your phone number is not valid';
-    } else {
-        return true;
-    }
-}
