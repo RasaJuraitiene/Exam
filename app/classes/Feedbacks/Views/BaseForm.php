@@ -10,8 +10,8 @@ class BaseForm extends \Core\Views\Form
     {
         $this->data = [
             'fields' => [
-                'review' => [
-                    'label' => 'Write a review:',
+                'feedback' => [
+                    'label' => 'Write a feedback:',
                     'type' => 'text',
                 ],
             ],

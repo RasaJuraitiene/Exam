@@ -35,7 +35,7 @@ $footer = new \App\Views\Footer();
     <section class="wrapper">
         <div class="block">
             <div id="reviews-table">
-                <h3>Reviews:</h3>
+                <h3>Feedback:</h3>
                 <table>
                     <thead>
                     <tr>
@@ -58,7 +58,7 @@ $footer = new \App\Views\Footer();
                 </div>
             <?php else: ?>
                 <p>
-                    Want to write a review? <a href="/register.php">Register!</a>
+                    Want to write a feedback? <a href="/register.php">Register!</a>
                 </p>
             <?php endif; ?>
             <div id="card-container"></div>

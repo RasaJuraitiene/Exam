@@ -6,17 +6,17 @@ $response = new \Core\Api\Response();
 
 
 $models = [
-    'review' => new \App\Feedbacks\Model(),
+    'feedback' => new \App\Feedbacks\Model(),
     'user' => new \App\Users\Model()
 ];
 
 $conditions = $_POST ?? [];
 
-$reviews = $models['review']->get($conditions);
-if ($reviews !== false) {
-    foreach ($reviews as $review) {
+$feedbacks = $models['feedback']->get($conditions);
+if ($feedbacks !== false) {
+    foreach ($feedbacks as $feedback) {
 
-        $r_array = $review->getData();
+        $r_array = $feedback->getData();
 //        unset($r_array['id']);
         $user = $models['user']->getById($r_array['user_id']);
 
@@ -28,7 +28,7 @@ if ($reviews !== false) {
             'user_id' => $r_array['user_id'],
             'id' => $r_array['id'],
             'name' => $r_array['name'],
-            'review' => $r_array['review'],
+            'feedback' => $r_array['feedback'],
             'timestamp' => $r_array['timestamp']
         ];
 

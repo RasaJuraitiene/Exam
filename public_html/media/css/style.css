@@ -163,13 +163,6 @@ footer {
     /*align-content: stretch;*/
 }
 
-@media screen and (max-width: 400px) {
-    .banner {
-        height: 150px;
-        width: 100%
-    }
-}
-
 .container {
     max-width: 800px;
     height: 400px;
@@ -180,6 +173,11 @@ footer {
 }
 
 @media screen and (max-width: 400px) {
+    .banner {
+        height: 150px;
+        width: 100%
+    }
+
     .container {
         flex-direction: column;
         margin: 20px 0;
@@ -188,8 +186,12 @@ footer {
     }
 
     .card {
-        max-width: 50% !important;
+        width: 50% !important;
         margin: 20px 0;
+    }
+
+    .card-img {
+        height: auto!important;
     }
 }
 
@@ -220,7 +222,7 @@ footer {
     text-align: center;
 }
 
-.service-content{
+.service-content {
     font-size: small;
     margin: 0 5px;
 }

@@ -8,9 +8,6 @@ $updateForm = new \App\Feedbacks\Views\UpdateForm();
 $navigation = new \App\Views\Navigation();
 $footer = new \App\Views\Footer();
 
-//if (!App::$session->userLoggedIn()) {
-//    header('Location: /login.php');
-//}
 ?>
 <html>
 <head>
@@ -40,13 +37,15 @@ $footer = new \App\Views\Footer();
             <div class="card">
                 <img class="card-img" src="media/images/9b.jpg">
                 <h5 class="service-name">SPECIAL EVENT TAXI</h5>
-                <p class="service-content">Private Vehicle Hire for Special Events. Choose our private luxury Taxi to make it a extra special event or
+                <p class="service-content">Private Vehicle Hire for Special Events. Choose our private luxury Taxi to
+                    make it a extra special event or
                     occasion.</p>
             </div>
             <div class="card">
                 <img class="card-img" src="media/images/Airport_Taxi_Melbourne.jpg">
                 <h5 class="service-name">PRIVATE AIRPORT TAXIS</h5>
-                <p class="service-content">Airport Taxi Transfer Service take the hassles out of air travel and hire a private car / taxi
+                <p class="service-content">Airport Taxi Transfer Service take the hassles out of air travel and hire a
+                    private car / taxi
                     transfer service to get you to and from Airports.</p>
             </div>
         </div>

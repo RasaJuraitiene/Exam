@@ -28,24 +28,24 @@ function form_success($filtered_input, $form)
 {
     $response = new \Core\Api\Response();
 
-    $review = new \App\Feedbacks\Feedback();
+    $feedback = new \App\Feedbacks\Feedback();
 
     $models = [
-        'review' => new \App\Feedbacks\Model(),
+        'feedback' => new \App\Feedbacks\Model(),
         'user' => new \App\Users\Model()
     ];
 
     $user = \App\App::$session->getUser();
 
-    $review->setUserId($user->getId());
+    $feedback->setUserId($user->getId());
 
-    $review->setReview($filtered_input['review']);
+    $feedback->setFeedback($filtered_input['feedback']);
 
-    $review->setTimestamp(time());
+    $feedback->setTimestamp(time());
 
-    $models['review']->insert($review);
+    $models['feedback']->insert($feedback);
 
-    $r_array = $review->getData();
+    $r_array = $feedback->getData();
 //    $r_array = $user->getData();
 //    unset($r_array['id']);
 
@@ -56,7 +56,7 @@ function form_success($filtered_input, $form)
     $sorted = [
         'id' => $r_array['id'],
         'name' => $r_array['name'],
-        'review' => $r_array['review'],
+        'feedback' => $r_array['feedback'],
         'timestamp' => $r_array['timestamp']
     ];
 
