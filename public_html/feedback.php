@@ -43,22 +43,21 @@ $footer = new \App\Views\Footer();
                     </tr>
                     </thead>
                     <tbody>
-<!--                    Rows Are Dynamically Populated-->
+                    <!--                    Rows Are Dynamically Populated-->
                     </tbody>
                 </table>
             </div>
-         </div>
+        </div>
 
         <?php if (App::$session->userLoggedIn()): ?>
             <div class="block">
-                 <?php print $createForm->render(); ?>
+                <?php print $createForm->render(); ?>
             </div>
-        <?php else:?>
+        <?php else: ?>
             <p>
                 Want to write a review? <a href="/register.php">Register!</a>
             </p>
         <?php endif; ?>
-<!--        <div id="card-container"></div>-->
     </section>
 
     <!-- Update Modal -->

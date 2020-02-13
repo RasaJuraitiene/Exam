@@ -2,12 +2,14 @@
 
 namespace Core;
 
-class Session {
+class Session
+{
 
     private $model;
     private $user;
 
-    public function __construct() {
+    public function __construct()
+    {
         session_start();
         $this->model = new \App\Users\Model();
 
@@ -15,18 +17,20 @@ class Session {
         $this->loginFromCookie();
     }
 
-    public function loginFromCookie() {
+    public function loginFromCookie()
+    {
         if ($_SESSION ?? false) {
             $this->login($_SESSION['email'], $_SESSION['password']);
         }
     }
 
-    public function login($email, $password) {
+    public function login($email, $password)
+    {
         $users = $this->model->get([
             'email' => $email,
             'password' => $password
         ]);
-        
+
         if ($users) {
             $this->user = $users[0];
 
@@ -41,15 +45,18 @@ class Session {
         return false;
     }
 
-    public function getUser() {
+    public function getUser()
+    {
         return $this->user;
     }
 
-    public function userLoggedIn() {
+    public function userLoggedIn()
+    {
         return $this->user ? true : false;
     }
 
-    public function logout() {
+    public function logout()
+    {
         if (session_status() == PHP_SESSION_ACTIVE) {
             // Clear the superglobal
             $_SESSION = [];

@@ -34,17 +34,20 @@ $footer = new \App\Views\Footer();
     <section class="wrapper">
         <div class="container">
             <div class="card">
+                <img class="card-img" src="media/images/executive-cars_2.jpg">
                 <h5 class="service-name">BUSINESS TAXIS</h5>
                 <p>Corporate Business Travel with our Luxury Driven Private Taxi Hire.
                     Getting you to your business meeting or corporate event in style, comfort and on time.</P>
             </div>
             <div class="card">
+                <img class="card-img" src="media/images/photo01.jpg>
                 <h5 class="service-name">SPECIAL EVENT TAXI</h5>
                 <p>Private Vehicle Hire for Special Events, Sporting fixture, Concerts,
                     Theatre and West End Show. Choose our private luxury Taxi to make it a extra special event or
                     occasion.</p>
             </div>
             <div class="card">
+                <img class="card-img" src="media/images/executive-cars_2.jpg">
                 <h5 class="service-name">PRIVATE AIRPORT TAXIS</h5>
                 <p>Airport Taxi Transfer Service take the hassles out of air travel and hire a private car / taxi
                     transfer service to get you to and from Airports.</p>

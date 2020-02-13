@@ -46,12 +46,10 @@ function form_success($filtered_input, $form)
     $models['review']->insert($review);
 
     $r_array = $review->getData();
-//    $r_array = $user->getData();
-//    unset($r_array['id']);
 
     $r_array['name'] = $user->getName();
 
-    $r_array['timestamp'] = since($r_array['timestamp']);
+    $r_array['timestamp'] = date('Y/d/m H:i:s', $r_array['timestamp']);
 
     $sorted = [
         'id' => $r_array['id'],

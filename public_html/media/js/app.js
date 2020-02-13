@@ -20,17 +20,17 @@ function api(url, formData, success, fail) {
         method: 'POST',
         body: formData
     }).then(response => response.json())
-            .then(obj => {
-                if (obj.status === 'success') {
-                    success(obj.data);
-                } else {
-                    fail(obj.errors);
-                }
-            })
-            .catch(e => {
-                console.log(e);
-                fail(['Could not connect to API!']);
-            });
+        .then(obj => {
+            if (obj.status === 'success') {
+                success(obj.data);
+            } else {
+                fail(obj.errors);
+            }
+        })
+        .catch(e => {
+            console.log(e);
+            fail(['Could not connect to API!']);
+        });
 }
 
 /**

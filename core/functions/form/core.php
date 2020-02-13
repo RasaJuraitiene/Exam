@@ -2,7 +2,8 @@
 
 require 'validators.php';
 
-function get_form_input($form) {
+function get_form_input($form)
+{
     $filter_parameters = [];
     foreach ($form['fields'] as $field_id => $field) {
         if (isset($field['filter'])) {
@@ -18,7 +19,8 @@ function get_form_input($form) {
  * Sanitizes submitted button data
  * @return string
  */
-function get_form_action() {
+function get_form_action()
+{
     return filter_input(INPUT_POST, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
 }
 
@@ -30,7 +32,8 @@ function get_form_action() {
  * @param array $form
  * @return boolean
  */
-function validate_form($filtered_input, &$form) {
+function validate_form($filtered_input, &$form)
+{
     $success = true;
 
     foreach ($form['fields'] as $field_id => &$field) {
