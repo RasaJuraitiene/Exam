@@ -61,8 +61,7 @@ const forms = {
         },
         success: function (data) {
             const element = forms.create.getElement();
-
-            card.row.append(data);
+            table.row.append(data);
             forms.ui.errors.hide(element);
             forms.ui.clear(element);
             forms.ui.flash.class(element, 'success');
@@ -100,7 +99,7 @@ const forms = {
             api(endpoints.update, formData, forms.update.success, forms.update.fail);
         },
         success: function (data) {
-            card.row.update(data);
+            table.row.update(data);
             forms.update.hide();
         },
         fail: function (errors) {

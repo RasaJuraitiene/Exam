@@ -28,3 +28,14 @@ function validate_not_empty($field_value, &$field)
         return true;
     }
 }
+
+function validate_no_number($field_value, &$field)
+{
+    if (!preg_match('/^([^0-9]+)$/', $field_value)) {
+        $field['error'] = 'No number please!';
+    } else {
+        return true;
+    }
+}
+
+

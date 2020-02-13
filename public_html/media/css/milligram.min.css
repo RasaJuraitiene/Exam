@@ -508,9 +508,9 @@ h6 {
   letter-spacing: 0;
   line-height: 1.4;
 }
-img {
-  max-width: 100%;
-}
+/*img {*/
+/*  max-width: 100%;*/
+/*}*/
 .clearfix:after {
   clear: both;
   content: " ";

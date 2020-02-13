@@ -19,6 +19,7 @@ class RegisterForm extends \Core\Views\Form
                     'extra' => [
                         'validators' => [
                             'validate_not_empty',
+                            'validate_no_number',
                             'validate_chars_length' => [
                                 'max' => 40
                             ]
@@ -31,6 +32,7 @@ class RegisterForm extends \Core\Views\Form
                     'extra' => [
                         'validators' => [
                             'validate_not_empty',
+                            'validate_no_number',
                             'validate_chars_length' => [
                                 'max' => 40
                             ]

@@ -13,6 +13,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 800px;
 }
 
 nav .link-wrapper {
@@ -29,7 +30,7 @@ nav .link-wrapper.active {
 
 main {
     /*margin-top: 50px;*/
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 140px);
 }
 
 .wrapper {
@@ -156,7 +157,11 @@ footer {
     width: 100%;
     background-image: url("../images/banner-1.jpg");
     background-size: cover;
-   }
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: flex-end;*/
+    /*align-content: stretch;*/
+}
 
 @media screen and (max-width: 400px) {
     .banner {
@@ -181,8 +186,10 @@ footer {
         object-fit: cover;
         height: auto;
     }
-    .card{
-        max-width: 50%!important;
+
+    .card {
+        max-width: 50% !important;
+        margin: 20px 0;
     }
 }
 
@@ -192,25 +199,28 @@ footer {
     justify-content: center;
     align-content: center;
     text-align: center;
-    padding: 20px;
-    max-height: 90%;
+    /*padding: 20px;*/
+    height: 90%;
     border: grey 1px solid;
     color: darkslategrey;
     margin: 20px;
     max-width: 25%;
 }
 
-.card-foto {
-    max-height: 40%!important;
+.card-img {
+    height: 40%;
+    width: 100%;
     object-fit: cover;
-    box-sizing: border-box;
-    padding: 10px;
+    /*padding: 10px;*/
 }
 
 .service-name {
     margin: 10px 5px;
+    font-weight: bold;
+    text-align: center;
 }
 
-.banner-text {
-    color: whitesmoke;
+.service-content{
+    font-size: small;
+    margin: 0 5px;
 }
