@@ -3,9 +3,9 @@
 
 namespace App\Feedbacks\Views;
 
+
 class ApiForm extends \Core\Views\Form
 {
-
     public function __construct($data = [])
     {
         $this->data = [
@@ -13,10 +13,7 @@ class ApiForm extends \Core\Views\Form
                 'review' => [
                     'extra' => [
                         'validators' => [
-                            'validate_not_empty',
-                            'validate_chars_length' => [
-                                'max' => 500
-                            ]
+                            'validate_not_empty'
                         ]
                     ]
                 ],

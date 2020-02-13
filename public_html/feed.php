@@ -14,7 +14,6 @@ $footer = new \App\Views\Footer();
 //}
 
 ?>
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -23,14 +22,13 @@ $footer = new \App\Views\Footer();
     <link rel="stylesheet" href="media/css/normalize.css">
     <link rel="stylesheet" href="media/css/milligram.min.css">
     <link rel="stylesheet" href="media/css/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="media/css/fonts/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 <body>
 <header>
     <?php print $navigation->render(); ?>
 </header>
-
 <main>
     <section class="wrapper">
         <div class="block">
@@ -51,19 +49,17 @@ $footer = new \App\Views\Footer();
             </div>
         </div>
 
-        <section class="wrapper">
-            <?php if (App::$session->userLoggedIn()): ?>
-                <div class="block">
-                    <h1>Reviews:</h1>
-                    <?php print $createForm->render(); ?>
-                </div>
-            <?php else: ?>
-                <p>
-                    Want to write a review? <a href="/register.php">Register!</a>
-                </p>
-            <?php endif; ?>
-            <div id="card-container"></div>
-        </section>
+        <?php if (App::$session->userLoggedIn()): ?>
+            <div class="block">
+                <?php print $createForm->render(); ?>
+            </div>
+        <?php else: ?>
+            <p>
+                Want to write a review? <a href="/register.php">Register!</a>
+            </p>
+        <?php endif; ?>
+    </section>
+
     <!-- Update Modal -->
     <div id="update-modal" class="modal">
         <div class="wrapper">
@@ -72,11 +68,11 @@ $footer = new \App\Views\Footer();
         </div>
     </div>
 </main>
+
 <!-- Footer -->
 <footer>
     <?php print $footer->render(); ?>
 </footer>
-
-<script defer src="media/js/feedback.js"></script>
+<script defer src="media/js/feed.js"></script>
 </body>
 </html>

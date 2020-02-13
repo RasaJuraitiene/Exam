@@ -3,8 +3,8 @@ require '../bootloader.php';
 
 use App\App;
 
-//$createForm = new \App\Participants\Views\CreateForm();
-//$updateForm = new \App\Participants\Views\UpdateForm();
+$createForm = new \App\Feedbacks\Views\CreateForm();
+$updateForm = new \App\Feedbacks\Views\UpdateForm();
 $navigation = new \App\Views\Navigation();
 $footer = new \App\Views\Footer();
 
@@ -40,7 +40,7 @@ $footer = new \App\Views\Footer();
                     Getting you to your business meeting or corporate event in style, comfort and on time.</P>
             </div>
             <div class="card">
-                <img class="card-img" src="media/images/photo01.jpg>
+                <img class="card-img" src="media/images/executive-cars_2.jpg">
                 <h5 class="service-name">SPECIAL EVENT TAXI</h5>
                 <p>Private Vehicle Hire for Special Events, Sporting fixture, Concerts,
                     Theatre and West End Show. Choose our private luxury Taxi to make it a extra special event or

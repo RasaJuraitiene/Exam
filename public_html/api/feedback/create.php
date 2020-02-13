@@ -37,7 +37,7 @@ function form_success($filtered_input, $form)
 
     $user = \App\App::$session->getUser();
 
-    $review->setId($user->getId());
+    $review->setUserId($user->getId());
 
     $review->setReview($filtered_input['review']);
 
@@ -46,6 +46,8 @@ function form_success($filtered_input, $form)
     $models['review']->insert($review);
 
     $r_array = $review->getData();
+//    $r_array = $user->getData();
+//    unset($r_array['id']);
 
     $r_array['name'] = $user->getName();
 
@@ -84,4 +86,3 @@ function form_fail($filtered_input, $form)
 
     $response->print();
 }
-

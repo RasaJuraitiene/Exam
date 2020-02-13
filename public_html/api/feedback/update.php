@@ -47,6 +47,7 @@ function form_success($filtered_input, &$form) {
         //idedame i data holderi naujas vertes, kurias ivede useris
         //ir kurios atejo is javascripto
         $review->setReview($filtered_input['review']);
+        $review->setRating($filtered_input['rating']);
 
         //vertes, kurias idejome auksciau i data holderi updatinam
         //ir duombazeje FileDB ka daro $drinksModel->update($drink) metodas
@@ -61,12 +62,12 @@ function form_success($filtered_input, &$form) {
         $r_array['timestamp'] = date('Y/d/m H:i:s', $r_array['timestamp']);
 
         $sorted = [
+            'user_id' => $r_array['user_id'],
             'id' => $r_array['id'],
             'name' => $r_array['name'],
             'review' => $r_array['review'],
             'timestamp' => $r_array['timestamp']
         ];
-
         $response->setData($sorted);
 
     }

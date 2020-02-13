@@ -14,8 +14,10 @@ class Feedback
             $this->setData($data);
         } else {
             $this->data = [
+                'user_id' => null,
                 'id' => null,
                 'review' => null,
+                'name' => null,
                 'timestamp' => null,
             ];
         }
@@ -32,6 +34,7 @@ class Feedback
         } else {
             $this->data['id'] = null;
         }
+        $this->setUserId($array['user_id'] ?? null);
         $this->setReview($array['review'] ?? null);
         $this->setTimestamp($array['timestamp'] ?? null);
     }
@@ -43,6 +46,7 @@ class Feedback
     public function getData()
     {
         return [
+            'user_id' => $this->getUserId(),
             'id' => $this->getId(),
             'review' => $this->getReview(),
             'timestamp' => $this->getTimestamp()
@@ -65,9 +69,22 @@ class Feedback
         return $this->data['id'];
     }
 
+    public function setUserId(int $user_id)
+    {
+        $this->data['user_id'] = $user_id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getUserId()
+    {
+        return $this->data['user_id'];
+    }
+
     /**
      * Sets name
-     * @param string $review
+     * @param string $name
      */
     public function setReview(string $review)
     {
@@ -75,7 +92,7 @@ class Feedback
     }
 
     /**
-     * Returns review
+     * Returns name
      * @return string
      */
     public function getReview()
@@ -84,9 +101,8 @@ class Feedback
     }
 
     /**
-     * Sets data timestamp
-     *
-     * @param string $timestamp
+     * Sets data surname
+     * @param string $surname
      */
     public function setTimestamp(int $timestamp)
     {
@@ -100,4 +116,5 @@ class Feedback
     {
         return $this->data['timestamp'] ?? null;
     }
+
 }

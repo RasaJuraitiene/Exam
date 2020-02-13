@@ -1,8 +1,10 @@
 'use strict';
 
 const endpoints = {
-    get: 'api/feedbacks/get.php',
-    create: 'api/feedbacks/create.php',
+    get: 'api/feedback/get.php',
+    create: 'api/feedback/create.php',
+    update: 'api/feedback/update.php',
+    delete: 'api/feedback/delete.php'
 };
 
 /**
@@ -44,7 +46,10 @@ const forms = {
     create: {
         init: function () {
             console.log('Initializing create form...');
-            this.getElement().addEventListener('submit', this.onSubmitListener);
+            if (this.getElement()) {
+                this.getElement().addEventListener('submit', this.onSubmitListener);
+            }
+
         },
         getElement: function () {
             return document.getElementById("create-form");
@@ -57,7 +62,7 @@ const forms = {
         success: function (data) {
             const element = forms.create.getElement();
 
-            table.row.append(data);
+            card.row.append(data);
             forms.ui.errors.hide(element);
             forms.ui.clear(element);
             forms.ui.flash.class(element, 'success');
@@ -95,7 +100,7 @@ const forms = {
             api(endpoints.update, formData, forms.update.success, forms.update.fail);
         },
         success: function (data) {
-            table.row.update(data);
+            card.row.update(data);
             forms.update.hide();
         },
         fail: function (errors) {
@@ -198,7 +203,7 @@ const forms = {
 };
 
 /**
- * Table-related functionality
+ * card-related functionality
  */
 const table = {
     getElement: function () {

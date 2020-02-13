@@ -3,13 +3,13 @@
 
 namespace App\Feedbacks;
 
-use \App\App;
+
+use App\App;
 use App\Feedbacks\Feedback;
 
 class Model
 {
-
-    private $table_name = 'feedbacks';
+    private $table_name = 'feedback';
 
     public function __construct()
     {
@@ -17,16 +17,16 @@ class Model
     }
 
     /**
-     * Irašo $user i duombaze
-     * @param Feedback $user
+     * Irašo $person i duombaze
+     * @param Feedback $person
      * @return bool
      */
-    public function insert(Feedback $user)
+    public function insert(Feedback $person)
     {
-        $row_id = App::$db->insertRow($this->table_name, $user->getData());
-        $user->setId($row_id);
+        $row_id = App::$db->insertRow($this->table_name, $person->getData());
+        $person->setId($row_id);
 
-        return $user;
+        return $person;
     }
 
     /**
@@ -46,26 +46,27 @@ class Model
     }
 
     /**
-     * @param Feedback $user
+     * @param Review $person
      * @return bool
      */
-    public function update(Feedback $user)
+    public function update(Feedback $person)
     {
-        return App::$db->updateRow($this->table_name, $user->getId(), $user->getData());
+        return App::$db->updateRow($this->table_name, $person->getId(), $person->getData());
     }
 
     /**
      * deletes all participants from database
-     * @param Feedback $user
+     * @param Review $person
      * @return bool
      */
-    public function delete(Feedback $user)
+    public function delete(Feedback $person)
     {
-        return App::$db->deleteRow($this->table_name, $user->getId());
+        return App::$db->deleteRow($this->table_name, $person->getId());
     }
 
     public function __destruct()
     {
         App::$db->save();
     }
+
 }

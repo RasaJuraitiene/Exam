@@ -8,7 +8,7 @@ $response = new \Core\Api\Response();
 
 if (App::$session->userLoggedIn()) {
 
-    $model = new \App\Reviews\Model();
+    $model = new \App\Feedbacks\Model();
 
     // fetch-as atsiunčia į šitą failą POST metodu duomenis (REQUEST)
     // tie duomenys tai yra formData
@@ -36,4 +36,3 @@ if (App::$session->userLoggedIn()) {
 }
 
 $response->print();
-
