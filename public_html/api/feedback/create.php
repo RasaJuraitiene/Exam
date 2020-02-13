@@ -46,8 +46,6 @@ function form_success($filtered_input, $form)
     $models['feedback']->insert($feedback);
 
     $r_array = $feedback->getData();
-//    $r_array = $user->getData();
-//    unset($r_array['id']);
 
     $r_array['name'] = $user->getName();
 

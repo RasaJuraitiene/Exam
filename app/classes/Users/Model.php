@@ -15,12 +15,10 @@ class Model
         App::$db->createTable($this->table_name);
     }
 
-
     public function insert(User $user)
     {
         return App::$db->insertRow($this->table_name, $user->getData());
     }
-
 
     public function get($conditions = [])
     {
@@ -48,12 +46,10 @@ class Model
         return null;
     }
 
-
     public function update(User $user)
     {
         return App::$db->updateRow($this->table_name, $user->getId(), $user->getData());
     }
-
 
     public function delete(User $user)
     {

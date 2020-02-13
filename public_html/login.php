@@ -35,26 +35,22 @@ switch (get_form_action()) {
     <link rel="stylesheet" href="media/css/style.css">
     <link rel="shortcut icon" href="media/css/fonts/favicon.ico" type="image/x-icon">
     <link rel="icon" href="media/css/fonts/favicon.ico" type="image/x-icon">
-    <!--    <script defer src="media/js/app.js"></script>-->
-</head>
+ </head>
 <body>
 <!-- Header -->
 <header>
     <?php print $navigation->render(); ?>
 </header>
-
 <!-- Main Content -->
 <main>
     <section class="wrapper">
         <div class="block">
             <h1>Login:</h1>
-
             <!-- Login Form -->
             <?php print $form->render(); ?>
         </div>
     </section>
 </main>
-
 <!-- Footer -->
 <footer>
     <?php print $footer->render(); ?>

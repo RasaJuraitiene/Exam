@@ -47,7 +47,7 @@ class Cookie
         if ($array) {
             return $array;
         } else {
-            trigger_error('Nepavyko dekodinti Bl*t!', E_USER_WARNING);
+            trigger_error('Not working', E_USER_WARNING);
         }
         return [];
     }

@@ -37,5 +37,3 @@ function validate_no_number($field_value, &$field)
         return true;
     }
 }
-
-

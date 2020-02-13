@@ -2,9 +2,7 @@
 
 const endpoints = {
     get: 'api/feedback/get.php',
-    create: 'api/feedback/create.php',
-    update: 'api/feedback/update.php',
-    delete: 'api/feedback/delete.php'
+    create: 'api/feedback/create.php'
 };
 
 /**
@@ -49,7 +47,6 @@ const forms = {
             if (this.getElement()) {
                 this.getElement().addEventListener('submit', this.onSubmitListener);
             }
-
         },
         getElement: function () {
             return document.getElementById("create-form");
@@ -68,54 +65,6 @@ const forms = {
         },
         fail: function (errors) {
             forms.ui.errors.show(forms.create.getElement(), errors);
-        }
-    },
-    /**
-     * Update Form
-     */
-    update: {
-        init: function () {
-            console.log('Initializing update form...');
-            this.elements.form().addEventListener('submit', this.onSubmitListener);
-
-            const closeBtn = forms.update.elements.modal().querySelector('.close');
-            closeBtn.addEventListener('click', forms.update.onCloseListener);
-
-        },
-        elements: {
-            form: function () {
-                return document.getElementById("update-form");
-            },
-            modal: function () {
-                return document.getElementById("update-modal");
-            }
-        },
-        onSubmitListener: function (e) {
-            e.preventDefault();
-            let formData = new FormData(e.target);
-            let id = forms.update.elements.form().getAttribute('data-id');
-            formData.append('id', id);
-
-            api(endpoints.update, formData, forms.update.success, forms.update.fail);
-        },
-        success: function (data) {
-            table.row.update(data);
-            forms.update.hide();
-        },
-        fail: function (errors) {
-            forms.ui.errors.show(this.elements.form(), errors);
-        },
-        fill: function (data) {
-            forms.ui.fill(forms.update.elements.form(), data);
-        },
-        onCloseListener: function (e) {
-            forms.update.hide();
-        },
-        show: function () {
-            this.elements.modal().style.display = 'block';
-        },
-        hide: function () {
-            this.elements.modal().style.display = 'none';
         }
     },
     /**
@@ -269,25 +218,6 @@ const table = {
         append: function (data) {
             table.getElement().append(this.build(data));
         },
-        /**
-         * Updates existing row in table from data
-         * Row is selected via "id" index in data
-         *
-         * @param {Object} data
-         */
-        update: function (data) {
-            let row = table.getElement().querySelector('tr[data-id="' + data.id + '"]');
-            row.replaceWith(this.build(data));
-            //row = this.build(data);
-        },
-        /**
-         * Deletes existing row
-         * @param {Integer} id
-         */
-        delete: function (id) {
-            const row = table.getElement().querySelector('tr[data-id="' + id + '"]');
-            row.remove();
-        }
     }
 };
 /**

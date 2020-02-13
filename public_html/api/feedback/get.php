@@ -4,7 +4,6 @@ require '../../../bootloader.php';
 
 $response = new \Core\Api\Response();
 
-
 $models = [
     'feedback' => new \App\Feedbacks\Model(),
     'user' => new \App\Users\Model()
@@ -17,7 +16,7 @@ if ($feedbacks !== false) {
     foreach ($feedbacks as $feedback) {
 
         $r_array = $feedback->getData();
-//        unset($r_array['id']);
+
         $user = $models['user']->getById($r_array['user_id']);
 
         $r_array['name'] = $user->getName();

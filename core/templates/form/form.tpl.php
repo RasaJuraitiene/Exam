@@ -7,8 +7,8 @@
                 <div class="field-wrapper">
 
                     <?php if (isset($field['label'])): ?>
-                        <!--If the label is set - print fields inside label-->
-                        <label>
+                    <!--If the label is set - print fields inside label-->
+                    <label>
                             <span class="label">
                                 <?php print $field['label']; ?>
                             </span>
@@ -19,11 +19,11 @@
                             <?php require 'elements/input.tpl.php'; ?>
                         <?php elseif ($field['type'] === 'select'): ?>
                             <?php require 'elements/select.tpl.php'; ?>
-                        <?php endif; ?> 
+                        <?php endif; ?>
 
                         <?php if (isset($field['label'])): ?>
-                        </label>
-                    <?php endif; ?>
+                    </label>
+                <?php endif; ?>
 
                     <?php if (isset($field['error'])): ?>
                         <div class="error-wrapper">
@@ -41,7 +41,7 @@
                     <?php print $data['message']; ?>
                 </div>
             <?php endif; ?>
-            
+
             <?php if (isset($data['buttons']) && !empty($data['buttons'])): ?>
                 <div class="button-wrapper">
 

@@ -10,6 +10,7 @@ function form_success($filtered_input, &$form)
     $user = new \App\Users\User($filtered_input);
 
     $model = new \App\Users\Model();
+
     $model->insert($user);
 
     $form['message'] = 'Registration successful! You can login!';
@@ -35,14 +36,12 @@ switch (get_form_action()) {
     <link rel="stylesheet" href="media/css/style.css">
     <link rel="shortcut icon" href="media/css/fonts/favicon.ico" type="image/x-icon">
     <link rel="icon" href="media/css/fonts/favicon.ico" type="image/x-icon">
-    <!--    <script defer src="media/js/app.js"></script>-->
 </head>
 <body>
 <!-- Header -->
 <header>
     <?php print $navigation->render(); ?>
 </header>
-
 <!-- Main Content -->
 <main>
     <section class="wrapper">
@@ -54,14 +53,12 @@ switch (get_form_action()) {
                 </p>
             <?php else: ?>
                 <h1>Register:</h1>
-
                 <!-- Register Form -->
                 <?php print $form->render(); ?>
             <?php endif; ?>
         </div>
     </section>
 </main>
-
 <!-- Footer -->
 <footer>
     <?php print $footer->render(); ?>
