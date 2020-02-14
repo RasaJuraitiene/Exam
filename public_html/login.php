@@ -43,7 +43,7 @@ switch (get_form_action()) {
 </header>
 <!-- Main Content -->
 <main>
-    <section class="wrapper">
+    <section class="wrapper_log_reg">
         <div class="block">
             <h1>Login:</h1>
             <!-- Login Form -->

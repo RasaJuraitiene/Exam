@@ -41,6 +41,14 @@ main {
     box-sizing: border-box;
 }
 
+.wrapper_log_reg {
+    width: 450px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
 .block {
     border-bottom: 6px dotted #efefef;
     padding: 15px 0;
